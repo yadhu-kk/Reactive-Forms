@@ -1,0 +1,56 @@
+.navbar {
+  border-radius: 0.5rem;
+}
+.myborder {
+  display: flex;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+img {
+  width: 150px;
+}
+.header {
+  padding-left: 550px;
+}
+p {
+  padding-left: 390px;
+}
+.forms {
+  align-items: center;
+  padding-left: 100px;
+}
+.contact-us {
+  img {
+    width: 350px;
+  }
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+}
+
+.form-group {
+  width: 300px;
+  height: 35px;
+  display: grid;
+  margin: 5px;
+  width: 100%;
+  padding: 10px 50px;
+}
+button {
+  padding: 10px 40px;
+  margin-left: 100px;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: rgb(65, 107, 247);
+  border-color: white;
+}
+
+form {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-content: center;
+}
+.text-danger {
+  color: red;
+}
