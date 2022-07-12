@@ -3,54 +3,57 @@
 }
 .myborder {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 50px;
 }
 img {
   width: 150px;
 }
 .header {
-  padding-left: 550px;
-}
-p {
-  padding-left: 390px;
-}
-.forms {
-  align-items: center;
-  padding-left: 100px;
+  text-align: center;
 }
 .contact-us {
+  display: flex;
   img {
     width: 350px;
   }
-  display: flex;
-  align-items: center;
-  //justify-content: center;
 }
-
-.form-group {
-  width: 300px;
+input {
+  width: 400px;
+  height: 30px;
+}
+select {
+  width: 408px;
   height: 35px;
-  display: grid;
-  margin: 5px;
-  width: 100%;
-  padding: 10px 50px;
 }
-button {
-  padding: 10px 40px;
-  margin-left: 100px;
-  border-radius: 25px;
-  cursor: pointer;
-  background-color: rgb(65, 107, 247);
+.form-group {
+  margin: 30px;
+  img {
+    width: 20px;
+  }
+}
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.submit {
+  text-align: right;
+  margin-right: 25px;
+}
+.btn {
+  width: 80px;
+  border-radius: 30px;
+  height: 40px;
+  background-color: rgb(5, 95, 148);
   border-color: white;
-}
-
-form {
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  justify-content: center;
 }
 .text-danger {
   color: red;
+}
+textarea {
+  flex-grow: 4;
+}
+p {
+  text-align: center;
+  margin-bottom: 30px;
 }

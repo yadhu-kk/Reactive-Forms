@@ -17,89 +17,92 @@
 
   <div class="forms">
     <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Name*"
-          formControlName="name"
-          [ngClass]="{ 'is-invalid': submit && f['name'].errors }"
-        />
-        <div class="text-danger" *ngIf="submit && f['name'].errors">
-          Name is required*
-        </div>
-      </div>
-      <div class="form-group">
-        <label></label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Email*"
-          formControlName="email"
-          [ngClass]="{ 'is-invalid': submit && f['email'].errors }"
-        />
-        <div class="text-danger" *ngIf="submit && f['email'].errors">
-          Invalid email*
-        </div>
-      </div>
-      <div class="form-group">
-        <input
-          type="text"
-          placeholder="Phone*"
-          class="form-control"
-          formControlName="Phone"
-          [ngClass]="{ 'is-invalid': submit && f['Phone'].errors }"
-        />
-        <div class="text-danger" *ngIf="submit && f['Phone'].errors">
-          Invalid Number*
-        </div>
-      </div>
-      <div class="form-group">
-        <label></label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Company*"
-          formControlName="Company"
-          [ngClass]="{ 'is-invalid': submit && f['Company'].errors }"
-        />
-        <div class="text-danger" *ngIf="submit && f['Company'].errors">
-          Company name required*
-        </div>
-      </div>
+      <div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name*"
+            formControlName="name"
+            [ngClass]="{ 'is-invalid': submit && f['name'].errors }"
+          />
 
-      <div class="form-group">
-        <!--<label for="TypeofProject"></label>-->
-        <select
-          name="Type of Project"
-          placeholder="Type of Project*"
-          formControlName="TypeofProject"
-          [ngClass]="{ 'is-invalid': submit && f['TypeofProject'].errors }"
-        >
-          <option value="" hidden>Type of Project</option>
-          <option *ngFor="let item of TypeofProject">
-            {{ item }}
-          </option>
-        </select>
-
-        <div class="text-danger" *ngIf="submit && f['TypeofProject'].errors">
-          Select type of project*
+          <div class="text-danger" *ngIf="submit && f['name'].errors">
+            Name is required*
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Brief Description of your Projects*"
-          formControlName="Description"
-          [ngClass]="{ 'is-invalid': submit && f['Description'].errors }"
-        />
-        <div class="text-danger" *ngIf="submit && f['Description'].errors">
-          Description required*
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email*"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submit && f['email'].errors }"
+          />
+          <div class="text-danger" *ngIf="submit && f['email'].errors">
+            Invalid email*
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Phone*"
+            class="form-control"
+            formControlName="Phone"
+            [ngClass]="{ 'is-invalid': submit && f['Phone'].errors }"
+          />
+          <div class="text-danger" *ngIf="submit && f['Phone'].errors">
+            Invalid Number*
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Company*"
+            formControlName="Company"
+            [ngClass]="{ 'is-invalid': submit && f['Company'].errors }"
+          />
+          <div class="text-danger" *ngIf="submit && f['Company'].errors">
+            Company name required*
+          </div>
         </div>
       </div>
       <div>
-        <button class="btn">submit</button>
+        <div class="form-group">
+          <!--<label for="TypeofProject"></label>-->
+          <select
+            name="Type of Project"
+            placeholder="Type of Project*"
+            formControlName="TypeofProject"
+            [ngClass]="{ 'is-invalid': submit && f['TypeofProject'].errors }"
+          >
+            <option value="" hidden>Type of Project</option>
+            <option *ngFor="let item of TypeofProject">
+              {{ item }}
+            </option>
+          </select>
+
+          <div class="text-danger" *ngIf="submit && f['TypeofProject'].errors">
+            Select type of project*
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea
+            rows="11"
+            cols="52"
+            class="form-control"
+            placeholder="Brief Description of your Projects*"
+            formControlName="Description"
+            [ngClass]="{ 'is-invalid': submit && f['Description'].errors }"
+          ></textarea>
+          <div class="text-danger" *ngIf="submit && f['Description'].errors">
+            Description required*
+          </div>
+        </div>
+        <div class="submit">
+          <button class="btn">submit</button>
+        </div>
       </div>
     </form>
   </div>
