@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import {
+  Validators,
+  FormGroup,
+  FormBuilder,
+  FormArray,
+  FormControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,6 +13,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent implements OnInit {
+  valuesArray = new FormArray([new FormControl('', Validators.required)]);
   TypeofProject = [
     'Web development',
     'Mobile development',
@@ -32,6 +39,12 @@ export class ContactUsComponent implements OnInit {
     if (this.registerForm.valid) {
       alert('submitted');
     }
+  }
+  addInput() {
+    this.valuesArray.push(new FormControl('', Validators.required));
+  }
+  removeInput(idx: number) {
+    this.valuesArray.removeAt(idx);
   }
 
   ngOnInit(): void {}

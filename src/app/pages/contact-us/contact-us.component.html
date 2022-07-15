@@ -3,21 +3,24 @@
     <h1><img src="/assets/images/edstem_logo.png" /></h1>
   </div>
 </nav>
-<div class="header">
-  <div>
-    <h3>Let's talk!</h3>
+<div class="container">
+  <div class="header">
+    <div>
+      <h2>Let's talk!</h2>
+      <p>
+        Share your requirements and we'll get back to you with how we can help.
+      </p>
+    </div>
   </div>
-</div>
-<p>Share your requirements and we'll get back to you with how we can help.</p>
+  <form class="form1" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+      <div class="contact-us">
+        <div>
+          <img src="/assets/images/contact-us.png" />
+        </div>
+      </div>
 
-<div class="contact-us">
-  <div>
-    <img src="/assets/images/contact-us.png" />
-  </div>
-
-  <div class="forms">
-    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div>
+      <div class="col1">
         <div class="form-group">
           <input
             type="text"
@@ -68,9 +71,32 @@
           </div>
         </div>
       </div>
-      <div>
+
+      <!-- <div class="col3">
+        <div
+          class="form-group"
+          *ngFor="let value of valuesArray.controls; index as idx"
+        >
+          <div>
+            <input
+              type="text"
+              name="questions"
+              class="formControl"
+              placeholder="Questions"
+            /><button type="button" (click)="addInput()">+</button
+            ><button
+              type="button"
+              (click)="removeInput(idx)"
+              *ngIf="valuesArray.length > 1"
+            >
+              -
+            </button>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="col2">
         <div class="form-group">
-          <!--<label for="TypeofProject"></label>-->
           <select
             name="Type of Project"
             placeholder="Type of Project*"
@@ -87,23 +113,43 @@
             Select type of project*
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group1">
           <textarea
-            rows="11"
-            cols="52"
             class="form-control"
             placeholder="Brief Description of your Projects*"
             formControlName="Description"
             [ngClass]="{ 'is-invalid': submit && f['Description'].errors }"
           ></textarea>
-          <div class="text-danger" *ngIf="submit && f['Description'].errors">
+          <span class="text-danger1" *ngIf="submit && f['Description'].errors">
             Description required*
-          </div>
-        </div>
-        <div class="submit">
-          <button class="btn">submit</button>
+          </span>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+    <!--sample div-->
+    <div class="line">
+      <div
+        class="form-group5"
+        *ngFor="let value of valuesArray.controls; index as idx"
+      >
+        <div>
+          <input type="text" name="questions" placeholder="Questions" /><button
+            type="button"
+            (click)="addInput()"
+          >
+            +</button
+          ><button
+            type="button"
+            (click)="removeInput(idx)"
+            *ngIf="valuesArray.length > 1"
+          >
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="btn1">
+      <button class="btn">submit</button>
+    </div>
+  </form>
 </div>
