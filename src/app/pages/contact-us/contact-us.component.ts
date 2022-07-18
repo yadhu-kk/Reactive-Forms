@@ -13,7 +13,9 @@ import {
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent implements OnInit {
-  valuesArray = new FormArray([new FormControl('', Validators.required)]);
+  get Add() {
+    return this.registerForm.get('Add') as FormArray;
+  }
   TypeofProject = [
     'Web development',
     'Mobile development',
@@ -30,6 +32,7 @@ export class ContactUsComponent implements OnInit {
     Company: ['', Validators.required],
     TypeofProject: ['', Validators.required],
     Description: ['', Validators.required],
+    Add: this.fb.array([]),
   });
   get f() {
     return this.registerForm.controls;
@@ -41,10 +44,10 @@ export class ContactUsComponent implements OnInit {
     }
   }
   addInput() {
-    this.valuesArray.push(new FormControl('', Validators.required));
+    this.Add.push(this.fb.control(''));
   }
   removeInput(idx: number) {
-    this.valuesArray.removeAt(idx);
+    this.Add.removeAt(idx);
   }
 
   ngOnInit(): void {}

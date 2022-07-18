@@ -71,30 +71,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="col3">
-        <div
-          class="form-group"
-          *ngFor="let value of valuesArray.controls; index as idx"
-        >
-          <div>
-            <input
-              type="text"
-              name="questions"
-              class="formControl"
-              placeholder="Questions"
-            /><button type="button" (click)="addInput()">+</button
-            ><button
-              type="button"
-              (click)="removeInput(idx)"
-              *ngIf="valuesArray.length > 1"
-            >
-              -
-            </button>
-          </div>
-        </div>
-      </div>-->
-
       <div class="col2">
         <div class="form-group">
           <select
@@ -125,26 +101,23 @@
           </span>
         </div>
       </div>
-    </div>
-    <!--sample div-->
-    <div class="line">
-      <div
-        class="form-group5"
-        *ngFor="let value of valuesArray.controls; index as idx"
-      >
-        <div>
-          <input type="text" name="questions" placeholder="Questions" /><button
-            type="button"
-            (click)="addInput()"
-          >
-            +</button
-          ><button
-            type="button"
-            (click)="removeInput(idx)"
-            *ngIf="valuesArray.length > 1"
-          >
-            -
-          </button>
+      <div class="col-span-2">
+        <div class="form-group5" formControlName="Add">
+          <div>
+            <input
+              type="text"
+              name="questions"
+              placeholder="Questions"
+            /><button type="button" (click)="addInput()">+</button>
+            <div
+              formArrayName="Add"
+              *ngFor="let item of Add.controls; let idx = index"
+            >
+              <!-- <label>q1 {{ idx + 1 }}</label>-->
+              <input type="text" formControlName="idx" />
+              <button type="button" (click)="removeInput(idx)">-</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
